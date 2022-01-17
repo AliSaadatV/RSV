@@ -13,7 +13,7 @@ INPUT_DIR=/mnt/data2/saadat/RSV/raw_data/RSV_Antonio
 REF=/mnt/data2/saadat/Reference_Genome/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa.gz
 
 # Validate VCF
-for file in INPUT_DIR/*.vcf.gz
+for file in ${INPUT_DIR}/*.vcf.gz
 do
     $GATK ValidateVariants \
     -R $REF \
