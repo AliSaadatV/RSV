@@ -2,7 +2,7 @@
 
 ########### Run as: bash file.sh 2>/path/to/log.err 1>path/to/log.out
 
-echo "Start at $date"
+echo "Start at $(date)"
 set -e
 
 # Tools
@@ -21,4 +21,4 @@ do
     --validation-type-to-exclude ALL
 done
 
-echo "End at $date"
+echo "End at $(date)"

@@ -14,7 +14,7 @@ OUTPUT_DIR=/mnt/data2/saadat/RSV/processed_data/genotype_gvcf_output
 REF=/mnt/data2/saadat/Reference_Genome/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa.gz
 TEMP_DIR=/mnt/data2/saadat/temp/genotype_gvcf
 
-# Prepare output
+# Prepare directories
 mkdir -p ${OUTPUT_DIR}
 mkdir -p ${TEMP_DIR}
 
