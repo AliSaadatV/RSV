@@ -1,8 +1,8 @@
 #!/bin/bash
 
-########### Run as: bash file.sh X 2>/path/to/log.err 1>path/to/log.out to run for chrX
+########### Run as: bash file.sh X 2>/path/to/log.err to run for chrX
 
-echo "Start at $date"
+echo "Start at $(date)"
 set -e
 
 # Tools
@@ -10,9 +10,9 @@ GATK=/mnt/data2/saadat/tools/gatk/gatk-4.2.2.0/gatk
 
 # Path
 INPUT_DIR=/mnt/data2/saadat/RSV/raw_data
-OUTPUT_DIR=/mnt/data2/saadat/RSV/processed_data/genotype_gvcf_output
+OUTPUT_DIR=/mnt/data2/saadat/RSV/processed_data/genomics_db_import_output
 REF=/mnt/data2/saadat/Reference_Genome/GCA_000001405.15_GRCh38_no_alt_analysis_set.fa.gz
-TEMP_DIR=/mnt/data2/saadat/temp/genotype_gvcf
+TEMP_DIR=/mnt/data2/saadat/temp/genomics_db_import
 
 # Prepare output
 mkdir -p ${OUTPUT_DIR}
@@ -32,11 +32,11 @@ done
 # Run genotype gvcf
 $GATK --java-options "-Djava.io.tmpdir=${TEMP_DIR} -Xms28G -Xmx30G -XX:ParallelGCThreads=1" \
         GenomicsDBImport \
-        --genomicsdb-workspace-path ${OUTPUT_DIR}/${CHR}_${1}_gdb \
+        --genomicsdb-workspace-path ${OUTPUT_DIR}/chr${1}_gdb \
         -R $REF \
         ${total_input} \
         --tmp-dir ${TEMP_DIR} \
         --intervals chr${1} \
         --genomicsdb-shared-posixfs-optimizations true
 
-echo "End at $date"
+echo "End at $(date)"
