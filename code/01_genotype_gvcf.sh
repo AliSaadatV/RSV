@@ -36,6 +36,7 @@ $GATK --java-options "-Djava.io.tmpdir=${TEMP_DIR} -Xms28G -Xmx30G -XX:ParallelG
         -R $REF \
         ${total_input} \
         --tmp-dir ${TEMP_DIR} \
-        --intervals chr${1}
+        --intervals chr${1} \
+        --genomicsdb-shared-posixfs-optimizations true
 
 echo "End at $date"
