@@ -1,7 +1,7 @@
 #!/bin/bash 
 #SBATCH --chdir /scratch/saadat/RSV
 #SBATCH --nodes 1
-#SBATCH --ntasks 10
+#SBATCH --ntasks 20
 #SBATCH --cpus-per-task 1
 #SBATCH --mem 30G
 #SBATCH --time 03:00:00
@@ -48,7 +48,7 @@ vep \
 -i ${INPUT_DIR}/bcftools_gatk_vcftools_norm.vcf.gz \
 -o ${OUTPUT_DIR}/vep.vcf.gz \
 --stats_file ${OUTPUT_DIR}/vep.html \
---fork 10 \
+--fork 20 \
 --force_overwrite
 
 # Filter with Slivar
@@ -61,7 +61,7 @@ ${SLIVAR_DIR}/slivar expr \
 # Annotate with annovar
 perl ${ANNOVAR}/table_annovar.pl ${OUTPUT_DIR}/vep_slivar.vcf ${ANNOVAR}/humandb_hg38/ \
  -buildver hg38 \
- -thread 10 \
+ -thread 20 \
  -out ${OUTPUT_DIR}/vep_slivar_annovar.vcf \
  -vcfinput \
  -remove \

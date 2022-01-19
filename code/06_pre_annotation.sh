@@ -28,6 +28,7 @@ REF=/work/gr-fe/saadat/Reference_Genome/GRCH38_no_alt/GCA_000001405.15_GRCh38_no
 
 # Create directories
 mkdir -p ${SCRATCH}/temp/${SLURM_JOBID}/io
+mkdir -p ${OUTPUT_DIR}
 
 cd ${OUTPUT_DIR}
 # Remove Batch Effect
