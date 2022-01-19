@@ -3,8 +3,8 @@
 #SBATCH --nodes 1
 #SBATCH --ntasks 1
 #SBATCH --cpus-per-task 20
-#SBATCH --mem 20G
-#SBATCH --time 03:00:00
+#SBATCH --mem 35G
+#SBATCH --time 07:00:00
 #SBATCH --mail-user=ali.saadat@epfl.ch
 #SBATCH -J pre_annotation_RSV
 #SBATCH --mail-type=END
