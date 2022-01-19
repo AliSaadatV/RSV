@@ -21,7 +21,7 @@ mkdir -p ${TEMP_DIR}
 cd ${INPUT_DIR}
 input_list=$( for i in {1..22} X Y M; do echo -n "-I chr${i}.g.vcf " ; done)
 
-# Run genotype gvcf
+# Run gather vcfs
 $GATK --java-options "-Djava.io.tmpdir=${TEMP_DIR} -Xms28G -Xmx30G -XX:ParallelGCThreads=2" \
 	GatherVcfs \
 	${input_list}\
