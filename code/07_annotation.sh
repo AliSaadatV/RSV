@@ -65,8 +65,8 @@ perl ${ANNOVAR}/table_annovar.pl ${OUTPUT_DIR}/vep_slivar.vcf ${ANNOVAR}/humandb
  -out ${OUTPUT_DIR}/vep_slivar_annovar.vcf \
  -vcfinput \
  -remove \
- -protocol refGene,ensGene,dbnsfp42a,avsnp147,clinvar_20210501,esp6500siv2_all,gnomad30_genome,exac03,ALL.sites.2015_08,dbscsnv11 \
- -operation g,g,f,f,f,f,f,f,f,f \
+ -protocol refGene,ensGene,dbnsfp42a,dbnsfp31a_interpro,avsnp147,clinvar_20210501,intervar_20180118,esp6500siv2_all,gnomad30_genome,exac03,ALL.sites.2015_08,dbscsnv11 \
+ -operation g,g,f,f,f,f,f,f,f,f,f,f \
  -nastring .
 
 echo "END AT $(date)"                                                                                                                                                    1,1           Top
