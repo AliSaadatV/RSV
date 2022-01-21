@@ -26,6 +26,6 @@ mkdir -p ${OUTPUT_DIR}
 source /work/gr-fe/saadat/tools/tapes/python_venv_for_tapes/bin/activate
 
 #python3 $TAPES annotate -i ${INPUT_DIR}/bcftools_gatk_vcftools_norm.vcf.gz  -o ${OUTPUT_DIR}/annotated.vcf --acmg 
-python3 $TAPES sort -i ${OUTPUT_DIR}/annotated_hg38_multianno.vcf -o ${OUTPUT_DIR}/acmg_results/ --tab -t 4
+python3 $TAPES sort -i ${OUTPUT_DIR}/annotated.hg38_multianno.vcf -o ${OUTPUT_DIR}/acmg_results/ --tab -t 4
 
 echo "END AT $(date)"                                                                                                                                                    1,1           Top
