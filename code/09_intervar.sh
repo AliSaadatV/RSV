@@ -24,7 +24,7 @@ ANNOVAR=/work/gr-fe/saadat/tools/annovar/annovar
 mkdir -p ${OUTPUT_DIR}
 
 # Activate load python3
-module load gcc python/3.7.3
+module load gcc python/3.7.7
 
 python ${INTERVAR}/Intervar.py -i ${INPUT_DIR}/bcftools_gatk_vcftools50_norm.vcf.gz \
     -o ${OUTPUT_DIR}/intervar50.vcf \
