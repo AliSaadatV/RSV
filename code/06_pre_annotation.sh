@@ -53,7 +53,7 @@ cd ${OUTPUT_DIR}
 # Exclude too variants with minor_AC<=1 and call-rate 50%
 #$VCFTOOLS --gzvcf bcftools_gatk.vcf.gz --mac 2 --max-missing 0.5 --recode --recode-INFO-all --out bcftools_gatk_vcftools50
 #bgzip -@ 20 -c bcftools_gatk_vcftools50.recode.vcf > bcftools_gatk_vcftools50.vcf.gz
-tabix -p vcf bcftools_gatk_vcftools.vcf50.vcf.gz
+tabix -p vcf bcftools_gatk_vcftools50.vcf.gz
 
 # Normalize and break multiallelic 
 $VT decompose -s -o temp.vcf bcftools_gatk_vcftools50.vcf.gz
