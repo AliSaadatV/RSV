@@ -32,7 +32,7 @@ mkdir -p ${OUTPUT_DIR}
 
 cd ${OUTPUT_DIR}
 # Remove Batch Effect
-$BCFTOOLS filter -i 'QUAL>=25 & INFO/DP>=20 & FORMAT/DP>=10 & FORMAT/GQ>=20' -S . -Ov \
+#$BCFTOOLS filter -i 'QUAL>=25 & INFO/DP>=20 & FORMAT/DP>=10 & FORMAT/GQ>=20' -S . -Ov \
 #	-o bcftools.vcf --threads 20 \
 #	${INPUT_DIR}/indel_recal_95_snp_recal_99.7_refined_GQ20.vcf.gz
 #bgzip -@ 20 -c bcftools.vcf > bcftools.vcf.gz
