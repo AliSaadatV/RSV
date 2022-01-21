@@ -4,7 +4,7 @@
 #SBATCH --ntasks 4
 #SBATCH --cpus-per-task 1
 #SBATCH --mem 40G
-#SBATCH --time 04:00:00
+#SBATCH --time 20:00:00
 #SBATCH --mail-user=ali.saadat@epfl.ch
 #SBATCH -J intervar_RSV
 #SBATCH --mail-type=END
