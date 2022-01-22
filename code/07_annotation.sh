@@ -45,8 +45,8 @@ vep \
 --cache_version 104 \
 --dir_plugins ${LOFTEE}/plugin_hg38/loftee \
 --plugin LoF,loftee_path:${LOFTEE}/plugin_hg38/loftee,human_ancestor_fa:${LOFTEE}/data_hg38/human_ancestor.fa.gz,gerp_bigwig:${LOFTEE}/data_hg38/gerp_conservation_scores.homo_sapiens.GRCh38.bw \
--i ${INPUT_DIR}/bcftools_gatk_vcftools_norm.vcf.gz \
--o ${OUTPUT_DIR}/vep.vcf.gz \
+-i ${INPUT_DIR}/bcftools_gatk_vcftools50_norm.vcf.gz \
+-o ${OUTPUT_DIR}/vep50.vcf.gz \
 --stats_file ${OUTPUT_DIR}/vep.html \
 --fork 20 \
 --force_overwrite
@@ -54,15 +54,15 @@ vep \
 # Filter with Slivar
 ${SLIVAR_DIR}/slivar expr \
 --js ${SLIVAR_DIR}/slivar-functions.js \
---vcf ${OUTPUT_DIR}/vep.vcf.gz \
+--vcf ${OUTPUT_DIR}/vep50.vcf.gz \
 --info 'INFO.impactful && variant.FILTER == "PASS"' \
---out-vcf ${OUTPUT_DIR}/vep_slivar.vcf
+--out-vcf ${OUTPUT_DIR}/vep50_slivar.vcf
 
 # Annotate with annovar
-perl ${ANNOVAR}/table_annovar.pl ${OUTPUT_DIR}/vep_slivar.vcf ${ANNOVAR}/humandb_hg38/ \
+perl ${ANNOVAR}/table_annovar.pl ${OUTPUT_DIR}/vep50_slivar.vcf ${ANNOVAR}/humandb_hg38/ \
  -buildver hg38 \
  -thread 20 \
- -out ${OUTPUT_DIR}/vep_slivar_annovar.vcf \
+ -out ${OUTPUT_DIR}/vep50_slivar_annovar.vcf \
  -vcfinput \
  -remove \
  -protocol refGene,ensGene,dbnsfp42a,dbnsfp31a_interpro,avsnp147,clinvar_20210501,intervar_20180118,esp6500siv2_all,gnomad30_genome,exac03,ALL.sites.2015_08,dbscsnv11 \
